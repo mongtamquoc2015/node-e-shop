@@ -6,7 +6,7 @@ var db = require('../db/lowdb.js');
 router.get('/', function(req, res, next) {
 	const products = db.get('products').value();
 	const category = db.get('category').value();
-	res.render('home/pages/home.jade', { title: 'Home', products: products, category: category });
+	res.render('home/pages/home.jade', { title: 'Home', products: products, categories: category });
 });
 
 module.exports = router;
