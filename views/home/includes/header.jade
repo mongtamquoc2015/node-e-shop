@@ -14,6 +14,11 @@
 	ul(class="navbar-list-item")
 		li(class="navbar-item")
 			a(href="#",class="navbar-item-link") Home
+		li(class="navbar-item")
+			a(href="#",class="navbar-item-link") Category
+				.dropdown-wrapper
+					each category in categories
+						p= category.name
 		li(class="navbar-item") 
 			a(href="#",class="navbar-item-link") All Item
 		li(class="navbar-item") 

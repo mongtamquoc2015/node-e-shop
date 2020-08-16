@@ -26,8 +26,6 @@ body {
 /* navbar */
 .navbar {
 	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
 	border-top: 1px solid rgb(136, 133, 133);
 }
 
@@ -40,6 +38,11 @@ body {
 .navbar-item {
 	margin: 0 20px;
 	list-style: none;
+	padding: 20px;
+}
+
+.navbar-item:hover .navbar-item-link{
+	color: #6284b7;
 }
 
 .navbar-item-link {
@@ -49,8 +52,27 @@ body {
 }
 
 .navbar-item-link:hover {
-	color: #6284b7;
 	text-decoration: none;
+}
+
+.navbar-item:hover .dropdown-wrapper {
+	opacity: 1;
+}
+
+.dropdown-wrapper {
+	opacity: 0;
+	position: absolute;
+	background-color: #fff;
+	width: 150px;
+	height: 200px;
+	top: 70px;
+}
+
+.dropdown-wrapper > p {
+	padding-top: 15px;
+	border-top: 1px dotted #ccc;
+	text-align: center;
+	color: #333;
 }
 
 /* banner */
