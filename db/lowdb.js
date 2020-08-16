@@ -27,7 +27,7 @@ db.defaults({
 			price: 396000
 		}
 	],
-	categories: [
+	category: [
 		{
 			id: 1,
 			name: "Tee"
@@ -37,6 +37,6 @@ db.defaults({
 			name: "Jacket"
 		},
 	]
-});
+}).write();
 
 module.exports = db;

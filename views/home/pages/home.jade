@@ -4,42 +4,16 @@ block content
 	main
 		.container
 			.row
-				.col-md-3
-					.card
-						img(class="card-img-top" src="https://bizweb.dktcdn.net/100/318/614/products/2.gif?v=1596861053770")
-						.card-body
-							.card-title MARCUS THE PLAYER TEE
-							.card-text 328.000d
-							.card-btn 
-								button(class="btn btn-secondary") Option
-								button(class="btn btn-muted") Qick view
-				.col-md-3
-					.card
-						img(class="card-img-top" src="https://bizweb.dktcdn.net/100/318/614/products/2.gif?v=1596861053770")
-						.card-body
-							.card-title MARCUS THE PLAYER TEE
-							.card-text 328.000d
-							.card-btn 
-								button(class="btn btn-secondary") Option
-								button(class="btn btn-muted") Qick view
-				.col-md-3
-					.card
-						img(class="card-img-top" src="https://bizweb.dktcdn.net/100/318/614/products/2.gif?v=1596861053770")
-						.card-body
-							.card-title MARCUS THE PLAYER TEE
-							.card-text 328.000d
-							.card-btn 
-								button(class="btn btn-secondary") Option
-								button(class="btn btn-muted") Qick view
-				.col-md-3
-					.card
-						img(class="card-img-top" src="https://bizweb.dktcdn.net/100/318/614/products/2.gif?v=1596861053770")
-						.card-body
-							.card-title MARCUS THE PLAYER TEE
-							.card-text 328.000d
-							.card-btn 
-								button(class="btn btn-secondary") Option
-								button(class="btn btn-muted") Qick view
+				each product in products
+					.col-md-3
+						.card
+							img(class="card-img-top" src=`${product.imgUrl}`)
+							.card-body
+								.card-title= product.name
+								.card-text= product.title 
+								.card-btn 
+									button(class="btn btn-secondary") Option
+									button(class="btn btn-muted") Qick view
 
 			.btn-all-product				
 				a(href="#",class="btn btn-danger") See all
