@@ -7,7 +7,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/* core */
 .mt-30 {
 	margin-top: 30px;
 }
@@ -18,7 +17,8 @@ body {
 }
 
 .brand {
-	top: 0;
+	margin: 0 10px;
+	top: 20px;
 	height: 100px;
 	position: relative;
 }
@@ -28,11 +28,10 @@ body {
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid rgb(136, 133, 133);
 }
 
 .navbar-list-item {
-	/* width: 100%; */
 	display: flex;
 	justify-items: center; 
 	align-content: space-around;
@@ -73,7 +72,7 @@ body {
 }
 
 /* main-wrapper */
-.main-wrapper {
+main {
 	position: relative;
 	top: 30px;
 }
@@ -110,6 +109,16 @@ body {
 }
 
 .btn-all-product {
+	width: 200px;
 	margin: 0 auto;
 	margin-top: 30px;
+}
+
+footer {
+	margin-top: 80px;
+}
+
+footer .fa {
+	font-size: 30px;
+	margin: 0 20px;
 }
