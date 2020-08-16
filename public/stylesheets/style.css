@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.topbar {
+	height: 41px;
+	position: relative;
+}
+
+.brand {
+	top: 0;
+	height: 100px;
+	position: relative;
+}
+
+/* navbar */
+.navbar {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid #ccc;
+}
+
+.navbar-list-item {
+	/* width: 100%; */
+	display: flex;
+	justify-items: center; 
+	align-content: space-around;
+}
+
+.navbar-item {
+	margin: 0 20px;
+	list-style: none;
+}
+
+.navbar-item-link {
+	font-size: 22px;
+	color: #333;
+	font-weight: bold;
+}
+
+.navbar-item-link:hover {
+	color: #6284b7;
+	text-decoration: none;
+}
+
+
+
