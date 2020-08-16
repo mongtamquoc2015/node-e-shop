@@ -7,6 +7,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+/* core */
+.mt-30 {
+	margin-top: 30px;
+}
 
 .topbar {
 	height: 41px;
@@ -22,8 +26,8 @@ body {
 /* navbar */
 .navbar {
 	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	border-top: 1px solid #ccc;
 }
 
@@ -50,5 +54,62 @@ body {
 	text-decoration: none;
 }
 
+/* banner */
+.banner {
+	width: 100%;
+	padding-bottom: 20px;
+}
 
+.banner > img {
+	width: 100%;
+}
 
+.under-highlight {
+	top: 20px;
+	position: relative;
+	width: 100px;
+	margin: auto;
+	border-bottom: 2px solid #c23329;
+}
+
+/* main-wrapper */
+.main-wrapper {
+	position: relative;
+	top: 30px;
+}
+/* card */
+
+.card {
+	width: 16rem;
+}
+
+.card:hover .card-btn {
+	opacity: 1;
+}
+
+.card img:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.card-btn {
+	z-index: 10;
+	position: absolute;
+	top: 30%;
+	opacity: 0;
+}
+
+.card-btn .btn {
+	width: 100px;
+	margin: 0 10px;
+}
+
+.card-btn .btn:hover {
+	background: #6284b7;
+	border: 1px solid #6284b7
+}
+
+.btn-all-product {
+	margin: 0 auto;
+	margin-top: 30px;
+}
