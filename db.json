@@ -19,12 +19,6 @@
       "imgUrl": "https://bizweb.dktcdn.net/thumb/large/100/318/614/products/plogosau.gif",
       "name": "P logo jacket",
       "price": 396000
-    },
-    {
-      "id": "e7696b1a-4e14-47b9-86a2-2b4b73ef2aec",
-      "name": "",
-      "price": "",
-      "imgUrl": ""
     }
   ],
   "category": [
@@ -37,23 +31,7 @@
       "name": "Jacket"
     },
     {
-      "id": "11bff37f-f7ba-41ac-a30a-4587c4fd23fd",
-      "name": ""
-    },
-    {
-      "id": "84b53d52-72f8-4a25-a798-36c98ac79385",
-      "name": ""
-    },
-    {
-      "id": "cc2b3a33-cd67-4b20-92b9-e6874db2cea9",
-      "name": ""
-    },
-    {
-      "id": "c604adbd-586e-4f25-97e0-f5cedb7b0ba6",
-      "name": ""
-    },
-    {
-      "id": "8a2d6cf8-5474-4ac8-8454-251e867cfe72",
+      "id": "19848fa1-b426-4153-99f3-fc02b8e7c82b",
       "name": ""
     }
   ]
