@@ -12,6 +12,11 @@ body {
 	width: 100px;
 }
 
+.img-75 {
+	width: 75px;
+	height: 75px;
+}
+
 .page-content>.row {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
