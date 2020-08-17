@@ -1,0 +1,31 @@
+.col-md-2
+	.sidebar.content-box(style='display: block;')
+		ul.nav
+			// Main menu
+			li.current
+				a(href='/admin/')
+					i.glyphicon.glyphicon-home
+					|  Dashboard
+			li
+				a(href='/admin/list-category')
+					i.glyphicon.glyphicon-calendar
+					|  List Category
+			li
+				a(href='/admin/add-category')
+					i.glyphicon.glyphicon-stats
+					|  Add Category
+			li
+				a(href='/admin/list-product')
+					i.glyphicon.glyphicon-record
+					|  List Product
+			li
+				a(href='/admin/add-product')
+					i.glyphicon.glyphicon-pencil
+					|  Add Product
+					span.caret.pull-right
+				// Sub menu
+				ul
+					li
+						a(href='/admin/login') Login
+					li
+						a(href='/admin/signup') Signup

@@ -1,0 +1,20 @@
+extends ../layouts/app
+
+block content
+	h1(class="text-center") Category
+	table.table
+		thead.thead-dark
+			tr
+				th(scope='col') #
+				th(scope='col') Name
+				th(scope='col') Action
+				th(scope='col')
+		tbody
+			each category in categories
+				tr
+					th(scope='row')= category.id
+					td= category.name
+					td
+						a(href="#",class="fa fa-edit text-success")
+					td
+						a(href=`/admin/delete-category/${category.id}`,class="fa fa-trash text-danger")
