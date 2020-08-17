@@ -8,13 +8,29 @@ module.exports.index = (req, res) => {
 }
 
 module.exports.create = (req, res) => {
-	res.render('admin/pages/add-product', { title: "Add product" })
+	res.render('admin/pages/add-product', { title: "Add product" });
 }
 
 module.exports.store = (req, res) => {
+	const errors = [];
+	if (!req.body.name) {
+		errors.push("Name is require");
+	} 
+	if (!req.body.price) {
+		errors.push("Price is require");
+	} 
+	if(!req.body.imgUrl) {
+		errors.push("image is require");
+	}
+	if (errors) {
+		res.render('admin/pages/add-product', { title: "Add product", errors: errors });
+	}
+
 	const name = req.body.name;
+	const price = req.body.price;
+	const imgUrl = req.body.imgUrl;
 	const id = uuid.v4();
-	const newCategory = { id: id, name: name };
+	const newCategory = { id: id, name: name, price: price, imgUrl: imgUrl };
 	products.push(newCategory).write();
 
 	res.render('admin/pages/list-product', { title: "List product", products: products.value() });

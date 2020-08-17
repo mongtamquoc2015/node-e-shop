@@ -1,28 +1,30 @@
 {
   "products": [
     {
-			"id": 1,
       "imgUrl": "https://bizweb.dktcdn.net/100/318/614/products/2.gif?v=1596861053770",
       "name": "Marcus waves tee",
       "price": 345000
     },
     {
-			"id": 2,
       "imgUrl": "https://bizweb.dktcdn.net/100/318/614/products/meow-02.gif?v=1594748096573",
       "name": "Meow the egg tee",
       "price": 324000
     },
     {
-			"id": 3,
       "imgUrl": "https://bizweb.dktcdn.net/100/318/614/products/twen-04.gif?v=1594657843217",
       "name": "'Twen' the warrior tee",
       "price": 345000
     },
     {
-			"id": 4,
       "imgUrl": "https://bizweb.dktcdn.net/thumb/large/100/318/614/products/plogosau.gif",
       "name": "P logo jacket",
       "price": 396000
+    },
+    {
+      "id": "e7696b1a-4e14-47b9-86a2-2b4b73ef2aec",
+      "name": "",
+      "price": "",
+      "imgUrl": ""
     }
   ],
   "category": [
@@ -35,20 +37,24 @@
       "name": "Jacket"
     },
     {
-      "id": "a6e49c1a-0f93-443d-9c88-9a9938bc29df",
-      "name": "Hat"
+      "id": "11bff37f-f7ba-41ac-a30a-4587c4fd23fd",
+      "name": ""
     },
     {
-      "id": "21844186-9c5c-4f23-8d19-f902a5101622",
-      "name": "Hat"
+      "id": "84b53d52-72f8-4a25-a798-36c98ac79385",
+      "name": ""
     },
     {
-      "id": "bb1297aa-3b6d-4d7f-b6ae-f153ab6dd4fc",
-      "name": "Phụ kiện"
+      "id": "cc2b3a33-cd67-4b20-92b9-e6874db2cea9",
+      "name": ""
     },
     {
-      "id": "a1a09828-54dd-4cfe-b542-05487c675fa0",
-      "name": "Phụ kiện"
+      "id": "c604adbd-586e-4f25-97e0-f5cedb7b0ba6",
+      "name": ""
+    },
+    {
+      "id": "8a2d6cf8-5474-4ac8-8454-251e867cfe72",
+      "name": ""
     }
   ]
 }

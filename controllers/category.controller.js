@@ -12,6 +12,13 @@ module.exports.create = (req, res) => {
 }
 
 module.exports.store = (req, res) => {
+	const errors = []
+	if (!req.body.name) {
+		errors.push("Name is require");
+	}
+	if (errors) {
+		res.render('admin/pages/add-category', {title: "List category", errors: errors});
+	}
 	const name = req.body.name;
 	const id = uuid.v4();
 	const newCategory = { id: id, name: name };
