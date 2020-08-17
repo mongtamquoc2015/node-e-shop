@@ -1,0 +1,8 @@
+extends ../layouts/app
+block content
+		h1(class="text-center") Add Category
+		form(action="/admin/add-category",method="POST")
+			.form-group
+				label(for='name') Name
+				input.form-control(type='name', name='name' placeholder='...')
+				button(class="btn btn-primary") ADD

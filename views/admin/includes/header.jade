@@ -1,0 +1,28 @@
+.header
+	.container
+		.row
+			.col-md-5
+				// Logo
+				.logo
+					h1
+						a(href='index.html') Dashboard - Namisan
+			.col-md-5
+				.row
+					.col-lg-12
+						.input-group.form
+							input.form-control(type='text' placeholder='Search...')
+							span.input-group-btn
+								button.btn.btn-primary(type='button') Search
+			.col-md-2
+				.navbar.navbar-inverse(role='banner')
+					nav.collapse.navbar-collapse.bs-navbar-collapse.navbar-right(role='navigation')
+						ul.nav.navbar-nav
+							li.dropdown
+								a.dropdown-toggle(href='#' data-toggle='dropdown')
+									| My Account 
+									b.caret
+								ul.dropdown-menu.animated.fadeInUp
+									li
+										a(href='profile.html') Profile
+									li
+										a(href='login.html') Logout
