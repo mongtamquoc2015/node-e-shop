@@ -36,6 +36,14 @@ db.defaults({
 			id: 2,
 			name: "Jacket"
 		},
+	],
+	users: [
+		{
+			id: "2lk34lsdft20934kdf7t45",
+			name: "Namisan",
+			email: "mongtamquoc2015@gmail.com",
+			password: "cca5f7ac85c2ba7945dad02c7228128a"
+		}
 	]
 }).write();
 
