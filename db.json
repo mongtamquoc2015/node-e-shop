@@ -29,10 +29,14 @@
     {
       "id": 2,
       "name": "Jacket"
-    },
+    }
+  ],
+  "users": [
     {
-      "id": "19848fa1-b426-4153-99f3-fc02b8e7c82b",
-      "name": ""
+      "id": 1,
+      "name": "Namisan",
+      "email": "mongtamquoc2015@gmail.com",
+      "password": "Xuanhung123123"
     }
   ]
 }

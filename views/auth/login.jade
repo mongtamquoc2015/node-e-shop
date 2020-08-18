@@ -1,0 +1,21 @@
+extends layouts/app
+
+block content
+	.container-fluid
+	.navbar.navbar-light.bg-light
+		a(href="#",class="navbar-brand text-center") Auth
+	.container.my-5
+		.row
+			.col-md-12
+				h3(class="text-center") Login
+				if errors
+					each error in errors
+						.alert.alert-danger= error
+				form(action="/auth/login",method="POST")
+					.form-group
+						label(for='name') Email
+						input.form-control(type='text', name='email' placeholder='...')
+					.form-group
+						label(for='name') Password
+						input.form-control(type='text', name='password' placeholder='...')
+					button(class="btn btn-primary") OK
