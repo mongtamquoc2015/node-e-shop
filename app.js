@@ -1,3 +1,5 @@
+require('dotenv').config();
+console.log(process.env.PORT);
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,8 +9,7 @@ var logger = require('morgan');
 // Routing
 var homeRouter = require('./routes/home.route');
 var adminRouter = require('./routes/admin.route');
-var authRouter = require('./routes/auth.route')
-
+var authRouter = require('./routes/auth.route');
 
 var app = express();
 
@@ -19,7 +20,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('abc123abc123'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Router
