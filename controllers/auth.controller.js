@@ -1,4 +1,5 @@
 const db = require('../db/lowdb');
+const md5 = require('md5');
 
 module.exports.displayLoginForm = (req,res) => {
 	res.render('auth/login');
@@ -17,13 +18,13 @@ module.exports.attemptsLoginForm = (req,res) => {
 		]});
 		return;
 	}
-	if (user.password != password)	{
+	if (user.password != md5(password))	{
 		res.render('auth/login', {errors: [
 			"Wrong password"
 		]});
 		return;	
 	}
 
-	res.cookie('userId', user.id);
+	res.cookie('userId', md5(user.id));
 	res.redirect('/admin');
 }
