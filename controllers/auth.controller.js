@@ -24,5 +24,6 @@ module.exports.attemptsLoginForm = (req,res) => {
 		return;	
 	}
 
+	res.cookie('userId', user.id);
 	res.redirect('/admin');
 }
