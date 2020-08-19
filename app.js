@@ -6,10 +6,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// Routing
 var homeRouter = require('./routes/home/home.route');
 var adminRouter = require('./routes/admin/admin.route');
-var authRouter = require('./routes/admin/auth.route')
+var authRouter = require('./routes/admin/auth.route');
+var sessionMiddleware = require('./middlewares/session.middleware');
 
 
 var app = express();
@@ -18,11 +18,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// Middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(sessionMiddleware);
 
 // Router
 app.use('/', homeRouter);

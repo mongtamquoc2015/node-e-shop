@@ -1,8 +1,6 @@
 const db = require('../../db/lowdb');
 const md5 = require('md5');
 const uuid = require('uuid');
-const path = require('path');
-
 
 module.exports.showLoginForm = (req,res) => {
 	res.render('home/pages/login', {title: 'Login'});
@@ -10,7 +8,7 @@ module.exports.showLoginForm = (req,res) => {
 
 module.exports.attempsUserLogin = (req,res) => {
 	const email = req.body.email;
-	const password = md5(req.body.password);
+	const password = req.body.password;
 	const users = db.get('users');
 	const user = users.find({email: email, password: password}).value();
 	if (user) {

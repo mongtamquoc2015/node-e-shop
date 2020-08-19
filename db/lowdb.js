@@ -15,7 +15,10 @@ db.defaults({
 			name: "Jacket"
 		},
 	],
-	users: []	,
+	users: [
+
+	]	,
+	sessions: [],
 	products: [{
 		"id": 1,
 		"name": "Lothario Benezet",
