@@ -1,5 +1,5 @@
 const db = require("../../db/lowdb");
-
+// FIXME: Add to cart
 module.exports.addTocCart = (req, res, next) => {
 	const productId = req.params.productId;
 	const sessionId = req.signedCookies.sessionId;

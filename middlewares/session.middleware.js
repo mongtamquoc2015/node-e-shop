@@ -1,5 +1,5 @@
 const uuid = require('uuid');
-const db = require('../db/lowdb');
+const Session = require('../models/session.model');
 
 module.exports = (req, res, next) => {
 	if (!req.signedCookies.sessionId) {
@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 		res.cookie('sessionId', sessionId, {
 			signed: true
 		});
-		db.get('sessions').push({id: sessionId}).write();
+		Session.insertMany([{ id: sessionId}]);
 	}
 	next();
 }

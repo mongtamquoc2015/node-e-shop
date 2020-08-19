@@ -1,23 +1,20 @@
-const db = require('../../db/lowdb');
-const uuid = require('uuid');
-var categories = db.get('category');
+const Category = require('../../models/category.model');
 
-
-module.exports.index = (req, res) => {
-	res.render('admin/pages/list-category', { title: "List category", categories: categories.value() });
+module.exports.index = async (req, res) => {
+	const categories = await Category.find();
+	res.render('admin/pages/list-category', { title: "List category", categories: categories });
 }
 
 module.exports.create = (req, res) => {
 	res.render('admin/pages/add-category', { title: "Add category" })
 }
 
-module.exports.store = (req, res) => {
+module.exports.store = async (req, res) => {
 	const name = req.body.name;
-	const id = uuid.v4();
-	const newCategory = { id: id, name: name };
-	categories.push(newCategory).write();
+	Category.insertMany([{name: name}]);
+	const categories = await Category.find();
 
-	res.render('admin/pages/list-category', { title: "List category", categories: categories.value() });
+	res.render('admin/pages/list-category', { title: "List category", categories: categories });
 }
 
 module.exports.edit = (req, res) => {

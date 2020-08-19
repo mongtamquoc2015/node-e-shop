@@ -1,18 +1,8 @@
-const db = require('../db/lowdb');
+const User = require('../models/user.model');
 
-module.exports.redirectIfNotLoggedIn = (req, res, next) => {
-	const id = req.signedCookies.adminId;
-	const user = db.get('users').find({ id: id }).value();
-	if (!id && !user) {
-		res.redirect('/auth/login');
-		return;
-	}
-	next();
-}
-
-module.exports.redirectIfNotLoggedIn = (req, res, next) => {
+module.exports.redirectIfNotLoggedIn = async (req, res, next) => {
 		const id = req.signedCookies.userId;
-		const user = db.get('users').find({ id: id }).value();
+		const user = await User.find({ id: id });
 		if (!id && !user) {
 			res.redirect('/auth/login');
 			return;

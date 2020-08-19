@@ -1,16 +1,14 @@
-const db = require('../../db/lowdb');
+const User = require('../../models/user.model');
 const md5 = require('md5');
 
 module.exports.displayLoginForm = (req,res) => {
 	res.render('auth/login');
 }
 
-module.exports.attemptsLoginForm = (req,res) => {
+module.exports.attemptsLoginForm = async (req,res) => {
 	const email = req.body.email;
 	const password = req.body.password;
-	const user = db.get('users')
-		.find({email: email})
-		.value();
+	const user = await User.findOne({email: email});
 	
 	if (!user) {
 		res.render('auth/login', {errors: [

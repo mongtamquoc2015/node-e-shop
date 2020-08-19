@@ -1,15 +1,16 @@
-const db = require('../db/lowdb');
+const Category = require('../models/category.model');
+const User = require('../models/user.model');
 
 const middleware = {
 
-	getAllCategory(req,res,next) {
-		const categories = db.get('category').value();
+	async getAllCategory(req,res,next) {
+		const categories = await Category.find();
 		res.locals.categories = categories;
 		next();
 	},
 
 	getUserLogin(req,res,next) {
-		const user = db.get('users').find({id: req.signedCookies.userId}).write();
+		const user = User.find({ id: req.signedCookies.userId});
 		res.locals.user = user;
 		next();
 	}
