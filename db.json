@@ -626,5 +626,10 @@
       "email": "tklaiser2r@microsoft.com",
       "image": "https://robohash.org/similiquenonut.png?size=50x50&set=set1"
     }
+  ],
+  "sessions": [
+    {
+      "sessionId": "a71b717c-f598-44fd-bda3-3bb5e156ba9f"
+    }
   ]
 }

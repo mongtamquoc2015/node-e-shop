@@ -24,3 +24,8 @@ module.exports.getAllProducts = (req, res) => {
 		maxPage: maxPage
 	});
 }
+
+module.exports.getProductHighlights = (req, res) => {
+	const products = db.get('products').value().slice(0,24);
+	res.render('home/pages/index', {products: products});
+}

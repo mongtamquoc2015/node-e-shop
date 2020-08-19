@@ -11,20 +11,23 @@
 					img(src=`${user.avatar}`,class="img-50")
 					a(href="#",class="text-white") Hello, #{user.name}
 				a(href="#",class="text-white") Contact
+				a(href="/cart",class="text-white") Cart
+					i(class="fa fa-cart-plus fs-20",style="font-size: 20px;margin-left: 3px")
 .brand
 	.container-fluid.d-flex.justify-content-center
-		img(src="https://bizweb.dktcdn.net/100/318/614/themes/667160/assets/logo.png?1597482328930", alt="")				
+		a(href="/")
+			img(src="https://bizweb.dktcdn.net/100/318/614/themes/667160/assets/logo.png?1597482328930", alt="")				
 .navbar 
 	ul(class="navbar-list-item")
 		li(class="navbar-item")
-			a(href="#",class="navbar-item-link") Home
+			a(href="/",class="navbar-item-link") Home
 		li(class="navbar-item")
 			a(href="#",class="navbar-item-link") Category
 				.dropdown-wrapper
 					each category in categories
 						p= category.name
 		li(class="navbar-item") 
-			a(href="#",class="navbar-item-link") All Item
+			a(href="/products",class="navbar-item-link") All Item
 		li(class="navbar-item") 
 			a(href="#",class="navbar-item-link") Contact
 

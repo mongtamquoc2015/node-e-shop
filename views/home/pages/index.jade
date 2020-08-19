@@ -12,8 +12,8 @@ block content
 								.card-title= product.name
 								.card-text= product.title 
 								.card-btn 
-									button(class="btn btn-secondary") Option
-									button(class="btn btn-muted") Qick view
+									a(href=`/cart/add/${product.id}`,class="btn btn-secondary") Add to cart
+									button(class="btn btn-muted") Buy
 
 			.btn-all-product				
-				a(href="#",class="btn btn-danger") See all
+				a(href="/products",class="btn btn-danger") See all

@@ -1,4 +1,4 @@
-extends ../layouts/app.home
+extends ../layouts/app
 
 block content 
 	main
@@ -12,8 +12,8 @@ block content
 								.card-title= product.name
 								.card-text= product.title 
 								.card-btn 
-									button(class="btn btn-secondary") Option
-									button(class="btn btn-muted") Qick view
+									a(href=`cart/add/${product.id}`,class="btn btn-secondary") Add to cart
+									a(href="#",class="btn btn-muted") Buy
 				nav(aria-label='Page navigation example',class="mt-5 float-right bg-muted")
 					ul.pagination
 						if (page >= 1)
