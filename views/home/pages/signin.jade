@@ -5,13 +5,13 @@ block content
 		if errors
 			each error in errors
 				.alert.alert-danger= error
-		form(action="/signin",method="POST")
+		form(action="/signin",method="POST",enctype="multipart/form-data")
 			.form-group
 				label(for='name') Name
 				input.form-control(type='name', name='name' placeholder='...')
 			.form-group
 				label(for='name') Avatar
-				input.form-control(type='file', name='avatar' placeholder='...')
+				input.form-control-file#avatar(type='file', name='avatar' placeholder='...')
 			.form-group
 				label(for='name') email
 				input.form-control(type='email', name='email' placeholder='...')

@@ -7,8 +7,9 @@
 				if !user
 					a(href="/login",class="text-white") Login
 					a(href="/signin",class="text-white") Signin
-				else 
-					a(href="",class="text-white") Hello, #{user.name}
+				if user
+					img(src=`${user.avatar}`,class="img-50")
+					a(href="#",class="text-white") Hello, #{user.name}
 				a(href="#",class="text-white") Contact
 .brand
 	.container-fluid.d-flex.justify-content-center
