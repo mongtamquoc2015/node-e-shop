@@ -1,4 +1,4 @@
-const db = require('../db/lowdb');
+const db = require('../../db/lowdb');
 const md5 = require('md5');
 
 module.exports.displayLoginForm = (req,res) => {

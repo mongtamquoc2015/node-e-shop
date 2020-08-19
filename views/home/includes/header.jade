@@ -4,8 +4,11 @@
 			.col-md-8
 				p Hotline: 0933.782.768
 			.col-md-4.d-flex.justify-content-around.text-white
-				a(href="#",class="text-white") Signin
-				a(href="#",class="text-white") Signup
+				if !user
+					a(href="/login",class="text-white") Login
+					a(href="/signin",class="text-white") Signin
+				else 
+					a(href="",class="text-white") Hello, #{user.name}
 				a(href="#",class="text-white") Contact
 .brand
 	.container-fluid.d-flex.justify-content-center

@@ -7,9 +7,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Routing
-var homeRouter = require('./routes/home.route');
-var adminRouter = require('./routes/admin.route');
-var authRouter = require('./routes/auth.route')
+var homeRouter = require('./routes/home/home.route');
+var adminRouter = require('./routes/admin/admin.route');
+var authRouter = require('./routes/admin/auth.route')
 
 
 var app = express();

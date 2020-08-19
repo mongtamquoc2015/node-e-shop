@@ -1,4 +1,4 @@
-const db = require('../db/lowdb');
+const db = require('../../db/lowdb');
 const uuid = require('uuid');
 var categories = db.get('category');
 
