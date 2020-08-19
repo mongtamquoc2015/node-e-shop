@@ -1,10 +1,10 @@
 const db = require('../../db/lowdb');
 const md5 = require('md5');
-const app = require('express')();
+const uuid = require('uuid');
+
 
 module.exports.showLoginForm = (req,res) => {
-	const categories = db.get('category').value();
-	res.render('home/pages/login', {title: 'Login', categories: categories});
+	res.render('home/pages/login', {title: 'Login'});
 }
 
 module.exports.attempsUserLogin = (req,res) => {
@@ -22,6 +22,26 @@ module.exports.attempsUserLogin = (req,res) => {
 }
 
 module.exports.showSigninForm = (req, res) => {
-	const categories = db.get('category').value();
-	res.render('home/pages/signin', { title: 'Signin', categories: categories });
+	res.render('home/pages/signin', { title: 'Signin'});
+}
+
+module.exports.createUser = (req,res) => {
+	const name = req.body.name;
+	const email = req.body.email;
+	const password = req.body.password;
+
+	if (!name || !email || !password ) {
+		res.render('home/pages/signin', {errors: ["Field is require!"]});
+	}
+	const user = {
+		id: uuid.v4,
+		name: name,
+		email: email,
+		password: md5(password)
+	};
+	db.get('users').push(user).write();
+	req.cookie('userId', user.id, {
+		signed: true
+	});
+	this.showLoginForm(req,res);
 }
