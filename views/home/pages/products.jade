@@ -1,0 +1,36 @@
+extends ../layouts/app.home
+
+block content 
+	main
+		.container
+			.row
+				each product in products
+					.col-md-3
+						.card
+							img(class="card-img-top" src=`${product.image}`)
+							.card-body
+								.card-title= product.name
+								.card-text= product.title 
+								.card-btn 
+									button(class="btn btn-secondary") Option
+									button(class="btn btn-muted") Qick view
+				nav(aria-label='Page navigation example',class="mt-5 float-right bg-muted")
+					ul.pagination
+						if (page >= 1)
+							li.page-item
+								a.page-link(href=`/products?page=${page-1}` aria-label='Previous')
+									span(aria-hidden='true') &laquo;
+									span.sr-only Previous
+						li.page-item
+							a.page-link(href=`/products?page=${page}`)= page
+						if (page + 1 <= maxPage)	
+							li.page-item
+								a.page-link(href=`/products?page=${page+1}`)= page + 1
+						if (page + 2 <= maxPage)
+							li.page-item
+								a.page-link(href=`/products?page=${page+2}`)= page + 2
+						if page <= maxPage
+							li.page-item
+								a.page-link(href=`/products?page=${page+1}` aria-label='Next')
+									span(aria-hidden='true') &raquo;
+									span.sr-only Next
