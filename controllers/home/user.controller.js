@@ -1,6 +1,7 @@
 const db = require('../../db/lowdb');
 const md5 = require('md5');
 const uuid = require('uuid');
+const path = require('path');
 
 
 module.exports.showLoginForm = (req,res) => {
@@ -18,7 +19,7 @@ module.exports.attempsUserLogin = (req,res) => {
 		});
 		res.redirect('/');
 	}
-	res.redirect('/login');
+	res.render('home/pages/login', { title: 'Login', errors: ["Email or password is not correct."]});
 }
 
 module.exports.showSigninForm = (req, res) => {
@@ -29,19 +30,23 @@ module.exports.createUser = (req,res) => {
 	const name = req.body.name;
 	const email = req.body.email;
 	const password = req.body.password;
+	let avatar = req.body.avatar;
+	avatar = req.file.path.split('/').slice(1).join('/');
 
-	if (!name || !email || !password ) {
-		res.render('home/pages/signin', {errors: ["Field is require!"]});
+	if (!name || !email || !password) {
+		res.render('home/pages/signin', {errors: ["Fields is require"]});
 	}
+
 	const user = {
-		id: uuid.v4,
+		id: uuid.v4(),
 		name: name,
 		email: email,
-		password: md5(password)
+		password: password,
+		avatar: avatar
 	};
 	db.get('users').push(user).write();
-	req.cookie('userId', user.id, {
+	res.cookie('userId', user.id, {
 		signed: true
 	});
-	this.showLoginForm(req,res);
+	res.render('home/pages/login', { title: 'Login' });
 }

@@ -11,30 +11,18 @@
   ],
   "users": [
     {
-      "id": "2lk34lsdft20934kdf7t45",
-      "name": "Namisan",
-      "email": "mongtamquoc2015@gmail.com",
-      "password": "cca5f7ac85c2ba7945dad02c7228128a"
-    },
-    {
+      "id": "04974535-6493-4858-bce3-74c952075e7d",
       "name": "namisan",
       "email": "mongtamquoc2015@gmail.com",
-      "password": "cca5f7ac85c2ba7945dad02c7228128a"
+      "password": "Xuanhung123123",
+      "avatar": "uploads/c299fced8fab899222413f65260328f5"
     },
     {
-      "name": "namisan",
-      "email": "mongtamquoc2015@gmail.com",
-      "password": "cca5f7ac85c2ba7945dad02c7228128a"
-    },
-    {
-      "name": "namisan",
-      "email": "mongtamquoc2015@gmail.com",
-      "password": "cca5f7ac85c2ba7945dad02c7228128a"
-    },
-    {
-      "name": "hung",
-      "email": "mongtamquoc2016@gmail.com",
-      "password": "cca5f7ac85c2ba7945dad02c7228128a"
+      "id": "2920db83-73fb-4287-bff3-d0a08e1eccbe",
+      "name": "Alex",
+      "email": "mongtamquoc2020@gmail.com",
+      "password": "Xuanhung123123",
+      "avatar": "uploads/avatar-1597829814246.jpg"
     }
   ],
   "products": [
