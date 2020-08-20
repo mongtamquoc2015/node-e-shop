@@ -5,26 +5,30 @@ module.exports.displayLoginForm = (req,res) => {
 	res.render('auth/login');
 }
 
-module.exports.attemptsLoginForm = async (req,res) => {
-	const email = req.body.email;
-	const password = req.body.password;
-	const user = await User.findOne({email: email});
+module.exports.attemptsLoginForm = async (req,res,next) => {
+	try {
+		const email = req.body.email;
+	  const password = req.body.password;
+		const user = await User.findOne({email: email});
 	
-	if (!user) {
-		res.render('auth/login', {errors: [
+		if (!user) {
+			res.render('auth/login', {errors: [
 			"User does not exist"
-		]});
-		return;
-	}
-	if (user.password != md5(password))	{
-		res.render('auth/login', {errors: [
-			"Wrong password"
-		]});
-		return;	
-	}
+			]});
+			return;
+		}
+		if (user.password != md5(password))	{
+			res.render('auth/login', {errors: [
+				"Wrong password"
+			]});
+			return;	
+		}
 
-	res.cookie('adminId', md5(user.id), {
-		signed: true
-	});
-	res.redirect('/admin');
+		res.cookie('adminId', md5(user.id), {
+			signed: true
+		});
+		res.redirect('/admin');
+	} catch(err) {
+		next(err)
+	}
 }

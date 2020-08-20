@@ -3,16 +3,24 @@ const User = require('../models/user.model');
 
 const middleware = {
 
-	async getAllCategory(req,res,next) {
-		const categories = await Category.find();
-		res.locals.categories = categories;
-		next();
+	async getAllCategory(req, res, next) {
+		try {
+			const categories = await Category.find();
+			res.locals.categories = categories;
+			next();
+		} catch (err) {
+			next(err);
+		}
 	},
 
-	getUserLogin(req,res,next) {
-		const user = User.find({ id: req.signedCookies.userId});
-		res.locals.user = user;
-		next();
+	async getUserLogin(req, res, next) {
+		try {
+			const user = await User.find({ id: req.signedCookies.userId });
+			res.locals.user = user;
+			next();
+		} catch (err) {
+			next(err);
+		}
 	}
 };
 
