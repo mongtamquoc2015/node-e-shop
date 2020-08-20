@@ -1,16 +1,14 @@
-const db = require('../../db/lowdb');
-const md5 = require('md5');
-const uuid = require('uuid');
+const User = require('../../models/user.model');
+
 
 module.exports.showLoginForm = (req,res) => {
 	res.render('home/pages/login', {title: 'Login'});
 }
 
-module.exports.attempsUserLogin = (req,res) => {
+module.exports.attempsUserLogin = async (req,res) => {
 	const email = req.body.email;
 	const password = req.body.password;
-	const users = db.get('users');
-	const user = users.find({email: email, password: password}).value();
+	const user = await User.findOne({email: email, password: password});
 	if (user) {
 		res.cookie('userId',user.id, {
 			signed: true
@@ -36,15 +34,12 @@ module.exports.createUser = (req,res) => {
 	}
 
 	const user = {
-		id: uuid.v4(),
 		name: name,
 		email: email,
 		password: password,
 		avatar: avatar
 	};
-	db.get('users').push(user).write();
-	res.cookie('userId', user.id, {
-		signed: true
-	});
+	User.insertMany([user]);
+
 	res.render('home/pages/login', { title: 'Login' });
 }

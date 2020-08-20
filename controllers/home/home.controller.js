@@ -1,31 +1,12 @@
-const db = require('../../db/lowdb');
-const md5 = require('md5');
+const Product = require('../../models/product.model');
 
-module.exports.getAllProducts = (req, res) => {
-	const page = parseInt(req.query.page) || 1;
-	const perPage = 8;
-	const start = (page - 1) * perPage;
-	const end = page * perPage;
 
-	const products = db.get('products').value().slice(start, end);
-	const maxPage = Math.round(db.get('products').value().length / perPage);
-
-	if (page >= maxPage) {
-		res.render('home/pages/products', {
-			products: products,
-			page: maxPage,
-			maxPage: maxPage
-		});
-	}
-
-	res.render('home/pages/products', {
-		products: products,
-		page: page,
-		maxPage: maxPage
-	});
+module.exports.getAllProducts = async (req, res) => {
+	const products = await Product.find();
+	res.render('home/pages/products', {products: products});
 }
 
-module.exports.getProductHighlights = (req, res) => {
-	const products = db.get('products').value().slice(0,24);
-	res.render('home/pages/index', {products: products});
+module.exports.getProductHighlights = async (req, res) => {
+	const products = await Product.find()
+	res.render('home/pages/index', {products: products.slice(0,24)});
 }
