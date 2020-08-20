@@ -7,7 +7,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_URL, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+})
+.catch(err => console.log(err));
 
 var homeRoute = require('./routes/home/home.route');
 var adminRoute = require('./routes/admin/admin.route');
