@@ -9,22 +9,8 @@
       "name": "Jacket"
     }
   ],
-  "users": [
-    {
-      "id": "04974535-6493-4858-bce3-74c952075e7d",
-      "name": "namisan",
-      "email": "mongtamquoc2015@gmail.com",
-      "password": "Xuanhung123123",
-      "avatar": "uploads/c299fced8fab899222413f65260328f5"
-    },
-    {
-      "id": "2920db83-73fb-4287-bff3-d0a08e1eccbe",
-      "name": "Alex",
-      "email": "mongtamquoc2020@gmail.com",
-      "password": "Xuanhung123123",
-      "avatar": "uploads/avatar-1597829814246.jpg"
-    }
-  ],
+  "users": [],
+  "sessions": [],
   "products": [
     {
       "id": 1,
@@ -625,11 +611,6 @@
       "name": "Tatum Klaiser",
       "email": "tklaiser2r@microsoft.com",
       "image": "https://robohash.org/similiquenonut.png?size=50x50&set=set1"
-    }
-  ],
-  "sessions": [
-    {
-      "sessionId": "a71b717c-f598-44fd-bda3-3bb5e156ba9f"
     }
   ]
 }
