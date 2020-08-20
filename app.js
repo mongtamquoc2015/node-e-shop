@@ -9,10 +9,11 @@ var mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true , useUnifiedTopology: true});
 
-var homeRouter = require('./routes/home/home.route');
-var adminRouter = require('./routes/admin/admin.route');
-var authRouter = require('./routes/admin/auth.route');
+var homeRoute = require('./routes/home/home.route');
+var adminRoute = require('./routes/admin/admin.route');
+var authRoute = require('./routes/admin/auth.route');
 var sessionMiddleware = require('./middlewares/session.middleware');
+var apiRoute = require('./api/routes/api.route');
 
 
 var app = express();
@@ -30,9 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(sessionMiddleware);
 
 // Router
-app.use('/', homeRouter);
-app.use('/admin', adminRouter);
-app.use('/auth', authRouter);
+app.use('/', homeRoute);
+app.use('/admin', adminRoute);
+app.use('/auth', authRoute);
+app.use('/api', apiRoute);
 
 
 // catch 404 and forward to error handler

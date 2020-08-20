@@ -3,6 +3,11 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+const homeController = require('../../controllers/home/home.controller');
+const userController = require('../../controllers/home/user.controller');
+const homeMiddleware = require('../../middlewares/home.middleware');
+const cartController = require('../../controllers/home/cart.controller');
+
 // Set storage Engine
 const storage = multer.diskStorage({
 	destination: './public/uploads',
@@ -16,12 +21,6 @@ const storage = multer.diskStorage({
 const upload = multer({
 	storage: storage
 });
-
-const db = require('../../db/lowdb.js');
-const homeController = require('../../controllers/home/home.controller');
-const userController = require('../../controllers/home/user.controller');
-const homeMiddleware = require('../../middlewares/home.middleware');
-const cartController = require('../../controllers/home/cart.controller');
 
 // Middleware
 router.use(homeMiddleware.getAllCategory, homeMiddleware.getUserLogin);
