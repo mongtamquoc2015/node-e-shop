@@ -15,7 +15,6 @@ module.exports.redirectIfNotLoggedIn = async (req, res, next) => {
 }
 
 module.exports.categoryValidation = (req, res, next) => {
-	try {
 		const errors = []
 		if (!req.body.name) {
 			errors.push("Name is require");
@@ -24,9 +23,6 @@ module.exports.categoryValidation = (req, res, next) => {
 			res.render('admin/pages/add-category', { title: "List category", errors: errors });
 		}
 		next();
-	} catch(err) {
-		next(err);
-	}
 }
 
 module.exports.productValidation = (req, res, next) => {
